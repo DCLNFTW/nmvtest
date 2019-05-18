@@ -1,0 +1,3 @@
+[submodule "nmvtest"]
+	path = nmvtest
+	url = ./
