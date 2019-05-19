@@ -351,7 +351,8 @@
 			)*/
 
 			let tokenAddress = "0x0f5d2fb29fb7d3cfee444a200298f468908cc942";
-			let walletAddress = "0x5c4eab549a528Bf15c47A01e174500010997235c";
+			let walletAddress = web3.eth.accounts[0];
+
 
 			// The minimum ABI to get ERC20 Token balance
 			let minABI = [
@@ -382,7 +383,7 @@
 			  contract.decimals((error, decimals) => {
 			    // calculate a balance
 			    balance = balance.div(10**decimals);
-			    $('#balance').text("Balance: ⏣ "+(Math.round(balance * 1) / 1));
+			    $('#balance').text("Balance: ⏣"+(Math.round(balance * 1) / 1));
 			  });
 			});
 
