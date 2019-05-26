@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	<title>EndGam - Gaming Magazine Template</title>
+	<title>DappCraft</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="EndGam Gaming Magazine Template">
 	<meta name="keywords" content="endGam,gGaming, magazine, html">
@@ -68,7 +68,7 @@
 						</li>
 						<li><a href="review.html">Reviews</a></li>
 						<li><a href="blog.html">News</a></li>-->
-						<li><a href="contact.html">Early access</a></li>
+						<li><a href="#">Under constraction</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -82,15 +82,14 @@
 		<div class="hero-slider owl-carousel">
 			<div class="hero-item set-bg d-flex align-items-center justify-content-center text-center" data-setbg="img/slider-bg-1.jpg">
 				<div class="container">
-					<h2>Wear on!</h2>
-					<p>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus. Donec vitae tempus dolor,<br>sit amet elementum lorem. Ut cursus tempor turpis.</p>
+					<h2>Craft!</h2>
+					<p>Take recipes. Have unique social activity. Craft items.</p>
 					<a href="#" class="site-btn">Read More  <img src="img/icons/double-arrow.png" alt="#"/></a>
 				</div>
 			</div>
 			<div class="hero-item set-bg d-flex align-items-center justify-content-center text-center" data-setbg="img/slider-bg-2.jpg">
 				<div class="container">
-					<h2>Try on!</h2>
-					<p>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus. Donec vitae tempus dolor,<br>sit amet elementum lorem. Ut cursus tempor turpis.</p>
+					<h2>Wear on!</h2><p>Show yourself or Sell them on open market or Start earning collection points</p>
 					<a href="#" class="site-btn">Read More  <img src="img/icons/double-arrow.png" alt="#"/></a>
 				</div>
 			</div>
@@ -98,6 +97,17 @@
 	</section>
 	<!-- Hero section end-->
 
+<!-- Newsletter section -->
+	<section class="newsletter-section">
+		<div class="container">
+			<h2>Be one of the first to get your own wearable stuff in Decentraland!</h2>
+			<form class="newsletter-form">
+				<input type="text" placeholder="ENTER YOUR E-MAIL">
+				<button class="site-btn">subscribe  <img src="img/icons/double-arrow.png" alt="#"/></button>
+			</form>
+		</div>
+	</section>
+	<!-- Newsletter section end -->
 
 	<!-- Intro section -->
 	<section class="intro-section">
@@ -284,20 +294,10 @@
 
 
 
-	<!-- Newsletter section -->
-	<section class="newsletter-section">
-		<div class="container">
-			<h2>Be one of the first to get your own wearable stuff in Decentraland!</h2>
-			<form class="newsletter-form">
-				<input type="text" placeholder="ENTER YOUR E-MAIL">
-				<button class="site-btn">subscribe  <img src="img/icons/double-arrow.png" alt="#"/></button>
-			</form>
-		</div>
-	</section>
-	<!-- Newsletter section end -->
+	
 
 
-	<!-- Footer section -->
+	<!-- Footer section 
 	<footer class="footer-section">
 		<div class="container">
 			<div class="footer-left-pic">
@@ -337,59 +337,8 @@
 	<script src="js/jquery.sticky-sidebar.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/main.js"></script>
-
-	 	<script type="text/javascript">
-		    
-			/*web3.eth.getBalance(web3.eth.accounts[0], 
-
-				function(error, result) 
-				{ 
-					//element.setAttribute("text", web3.fromWei(result.toNumber()));
-					var balance = web3.fromWei(result.toNumber());
-					$('#balance').text("ETH: "+(Math.round(balance * 1000) / 1000));
-				} 
-			)*/
-
-			let tokenAddress = "0x0f5d2fb29fb7d3cfee444a200298f468908cc942";
-			let walletAddress = web3.eth.accounts[0];
-
-
-			// The minimum ABI to get ERC20 Token balance
-			let minABI = [
-			  // balanceOf
-			  {
-			    "constant":true,
-			    "inputs":[{"name":"_owner","type":"address"}],
-			    "name":"balanceOf",
-			    "outputs":[{"name":"balance","type":"uint256"}],
-			    "type":"function"
-			  },
-			  // decimals
-			  {
-			    "constant":true,
-			    "inputs":[],
-			    "name":"decimals",
-			    "outputs":[{"name":"","type":"uint8"}],
-			    "type":"function"
-			  }
-			];
-
-			// Get ERC20 Token contract instance
-			let contract = web3.eth.contract(minABI).at(tokenAddress);
-
-			// Call balanceOf function
-			contract.balanceOf(walletAddress, (error, balance) => {
-			  // Get decimals
-			  contract.decimals((error, decimals) => {
-			    // calculate a balance
-			    balance = balance.div(10**decimals);
-			    $('#balance').text("Balance: ⏣"+(Math.round(balance * 1) / 1));
-			  });
-			});
-
-
-		 </script>
-		  <script type="text/javascript" src="./build.js"></script>
+	<script src="js/web3.js"></script>
+	<script type="text/javascript" src="./build.js"></script>
 	</body>
 </html>
 
